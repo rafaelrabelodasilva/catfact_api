@@ -1,0 +1,1139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.7.4 on win32)" generated="20240730 19:32:39.803" rpa="false" schemaversion="4">
+<suite id="s1" name="Get Breeds" source="C:\Projetos\catfact_api\tests\get_breeds.robot">
+<test id="s1-t1" name="CT01: Valid request to GET /breeds returns status code 200 and a list of breeds" line="6">
+<kw name="When I send a GET request to /breeds without specifying a limit parameter" library="get_breeds_resources">
+<kw name="GET" library="RequestsLibrary">
+<var>${RESPONSE}</var>
+<arg>${URL}</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20240730 19:32:40.648" level="INFO">GET Request : url=https://catfact.ninja/breeds 
+ path_url=/breeds 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20240730 19:32:40.648" level="INFO">GET Response : url=https://catfact.ninja/breeds 
+ status=200, reason=OK 
+ headers={'Server': 'nginx', 'Date': 'Tue, 30 Jul 2024 22:32:18 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Vary': 'Accept-Encoding', 'Cache-Control': 'no-cache, private', 'X-Ratelimit-Limit': '100', 'X-Ratelimit-Remaining': '99', 'Access-Control-Allow-Origin': '*', 'Set-Cookie': 'XSRF-TOKEN=eyJpdiI6Ii92NkJWUy9CQUNQVzcyY2FxVGhKN3c9PSIsInZhbHVlIjoiRzVDSzlCbVpBbUJOYm9zRnpWallQMmkwVkFaT2JYbURxbFVzVFNJSkFwcDVKNXorMit0M2luc05Nb04xanNiemZ3VXFEbmFDS0oxUnhmK0hnWEdnWVd4MGVVNHBzUXpNS1Y1Y0ZyVkVVbjlaaWpzdVM3TEhDWUFwVFFBOWNsZ2EiLCJtYWMiOiI1ZmI5ZGY5YmY1MjU1NjU5NTA2NzkzYTE5MWQyMjhjZGE3YTBhZjdlMDRjZjljMTdlZDg0Nzk2MzkxZTMyOTU2IiwidGFnIjoiIn0%3D; expires=Wed, 31-Jul-2024 00:32:18 GMT; Max-Age=7200; path=/; secure; samesite=lax, catfacts_session=eyJpdiI6IjFMRjREeTUxUzM1SnJCV3UyWkJURlE9PSIsInZhbHVlIjoiR3dmak9BVTBYRU9TL3pndXZpNXgvRzdtRHRQOTY5UWpyUEZGdGk3REh1Q3ZwY083bkdSczMvczRyckVuV2NaaS9BZzBzN2dmV1o3ME9SNVV6S0tSMTdzV3EzbXAzNXJBSkMrVUpMMXgzVTFuOEd5YVZWdUt2ckN6a0c5NzZDcjYiLCJtYWMiOiI2MzA2YTA4YmQ2MGQxYmE0ZmI0ZDhlMzgzODc1NjNiNmJjNWZhYmRjM2I3MzljY2U4ZGE3MDBkODhiODRkZmQ1IiwidGFnIjoiIn0%3D; expires=Wed, 31-Jul-2024 00:32:18 GMT; Max-Age=7200; path=/; httponly; samesite=lax', 'X-Frame-Options': 'SAMEORIGIN', 'X-XSS-Protection': '1; mode=block', 'X-Content-Type-Options': 'nosniff', 'Content-Encoding': 'gzip'} 
+ body={"current_page":1,"data":[{"breed":"Abyssinian","country":"Ethiopia","origin":"Natural\/Standard","coat":"Short","pattern":"Ticked"},{"breed":"Aegean","country":"Greece","origin":"Natural\/Standard","coat":"Semi-long","pattern":"Bi- or tri-colored"},{"breed":"American Curl","country":"United States","origin":"Mutation","coat":"Short\/Long","pattern":"All"},{"breed":"American Bobtail","country":"United States","origin":"Mutation","coat":"Short\/Long","pattern":"All"},{"breed":"American Shorthair","country":"United States","origin":"Natural","coat":"Short","pattern":"All but colorpoint"},{"breed":"American Wirehair","country":"United States","origin":"Mutation","coat":"Rex","pattern":"All but colorpoint"},{"breed":"Arabian Mau","country":"Arabian Peninsula","origin":"Natural","coat":"Short","pattern":""},{"breed":"Australian Mist","country":"Australia","origin":"Crossbreed","coat":"Short","pattern":"Spotted and Classic tabby"},{"breed":"Asian","country":"developed in the United Kingdom (founding stock from Asia)","origin":"","coat":"Short","pattern":"Evenly solid"},{"breed":"Asian Semi-longhair","country":"United Kingdom","origin":"Crossbreed","coat":"Semi-long","pattern":"Solid"},{"breed":"Balinese","country":"developed in the United States (founding stock from Thailand)","origin":"Crossbreed","coat":"Long","pattern":"Colorpoint"},{"breed":"Bambino","country":"United States","origin":"Crossbreed","coat":"Hairless\/Furry down","pattern":""},{"breed":"Bengal","country":"developed in the United States (founding stock from Asia)","origin":"Hybrid","coat":"Short","pattern":"Spotted\/Marbled"},{"breed":"Birman","country":"developed in France (founding stock from Burma)","origin":"Natural","coat":"Semi Long","pattern":"Colorpoint"},{"breed":"Bombay","country":"developed in the United States (founding stock from Asia)","origin":"Crossbred","coat":"Short","pattern":"Solid"},{"breed":"Brazilian Shorthair","country":"Brazil","origin":"Natural","coat":"Short","pattern":"All"},{"breed":"British Semi-longhair","country":"United Kingdom","origin":"","coat":"Medium","pattern":"All"},{"breed":"British Shorthair","country":"United Kingdom","origin":"Natural","coat":"Short","pattern":"All"},{"breed":"British Longhair","country":"United Kingdom","origin":"","coat":"Long","pattern":""},{"breed":"Burmese","country":"Burma and Thailand","origin":"Natural","coat":"Short","pattern":"Solid"},{"breed":"Burmilla","country":"United Kingdom","origin":"Crossbreed","coat":"Short\/Long","pattern":""},{"breed":"California Spangled","country":"United States","origin":"Crossbreed","coat":"Short","pattern":"Spotted"},{"breed":"Chantilly-Tiffany","country":"United States","origin":"","coat":"","pattern":""},{"breed":"Chartreux","country":"France","origin":"Natural","coat":"Short","pattern":"Solid"},{"breed":"Chausie","country":"France","origin":"Hybrid","coat":"Short","pattern":"Ticked"}],"first_page_url":"https:\/\/catfact.ninja\/breeds?page=1","from":1,"last_page":4,"last_page_url":"https:\/\/catfact.ninja\/breeds?page=4","links":[{"url":null,"label":"Previous","active":false},{"url":"https:\/\/catfact.ninja\/breeds?page=1","label":"1","active":true},{"url":"https:\/\/catfact.ninja\/breeds?page=2","label":"2","active":false},{"url":"https:\/\/catfact.ninja\/breeds?page=3","label":"3","active":false},{"url":"https:\/\/catfact.ninja\/breeds?page=4","label":"4","active":false},{"url":"https:\/\/catfact.ninja\/breeds?page=2","label":"Next","active":false}],"next_page_url":"https:\/\/catfact.ninja\/breeds?page=2","path":"https:\/\/catfact.ninja\/breeds","per_page":25,"prev_page_url":null,"to":25,"total":98} 
+ </msg>
+<msg timestamp="20240730 19:32:40.648" level="INFO">${RESPONSE} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20240730 19:32:40.072" endtime="20240730 19:32:40.648"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${RESPONSE}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20240730 19:32:40.649" level="INFO">${RESPONSE} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20240730 19:32:40.648" endtime="20240730 19:32:40.649"/>
+</kw>
+<status status="PASS" starttime="20240730 19:32:40.071" endtime="20240730 19:32:40.649"/>
+</kw>
+<kw name="Then I should receive a response with status code" library="get_breeds_resources">
+<arg>200</arg>
+<arg>OK</arg>
+<kw name="Status Should Be" library="RequestsLibrary">
+<arg>${status_code}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" starttime="20240730 19:32:40.650" endtime="20240730 19:32:40.650"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${status_reason}</arg>
+<arg>${RESPONSE.reason}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20240730 19:32:40.650" endtime="20240730 19:32:40.651"/>
+</kw>
+<status status="PASS" starttime="20240730 19:32:40.649" endtime="20240730 19:32:40.651"/>
+</kw>
+<kw name="And the response body should contain an array named &quot;data&quot; with a list of breeds" library="get_breeds_resources">
+<kw name="Dictionary Should Contain Key" library="Collections">
+<arg>${RESPONSE.json()}</arg>
+<arg>data</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" starttime="20240730 19:32:40.651" endtime="20240730 19:32:40.652"/>
+</kw>
+<status status="PASS" starttime="20240730 19:32:40.651" endtime="20240730 19:32:40.652"/>
+</kw>
+<kw name="And each breed in the list should have the following fields: breed, country, origin, coat, and pattern" library="get_breeds_resources">
+<kw name="Get From Dictionary" library="Collections">
+<var>${DATA}</var>
+<arg>${RESPONSE.json()}</arg>
+<arg>data</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20240730 19:32:40.654" level="INFO">${DATA} = [{'breed': 'Abyssinian', 'country': 'Ethiopia', 'origin': 'Natural/Standard', 'coat': 'Short', 'pattern': 'Ticked'}, {'breed': 'Aegean', 'country': 'Greece', 'origin': 'Natural/Standard', 'coat': 'Sem...</msg>
+<status status="PASS" starttime="20240730 19:32:40.653" endtime="20240730 19:32:40.654"/>
+</kw>
+<for flavor="IN">
+<var>${ITEM}</var>
+<value>@{DATA}</value>
+<iter>
+<var name="${ITEM}">{'breed': 'Abyssinian', 'country': 'Ethiopia', 'origin': 'Natural/Standard', 'coat': 'Short', 'pattern': 'Ticked'}</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>breed</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.654" endtime="20240730 19:32:40.654"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>country</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.654" endtime="20240730 19:32:40.654"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>origin</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.654" endtime="20240730 19:32:40.655"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>coat</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.655" endtime="20240730 19:32:40.655"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>pattern</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.655" endtime="20240730 19:32:40.655"/>
+</kw>
+<status status="PASS" starttime="20240730 19:32:40.654" endtime="20240730 19:32:40.655"/>
+</iter>
+<iter>
+<var name="${ITEM}">{'breed': 'Aegean', 'country': 'Greece', 'origin': 'Natural/Standard', 'coat': 'Semi-long', 'pattern': 'Bi- or tri-colored'}</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>breed</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.655" endtime="20240730 19:32:40.655"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>country</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.655" endtime="20240730 19:32:40.656"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>origin</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.656" endtime="20240730 19:32:40.656"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>coat</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.656" endtime="20240730 19:32:40.656"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>pattern</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.656" endtime="20240730 19:32:40.656"/>
+</kw>
+<status status="PASS" starttime="20240730 19:32:40.655" endtime="20240730 19:32:40.656"/>
+</iter>
+<iter>
+<var name="${ITEM}">{'breed': 'American Curl', 'country': 'United States', 'origin': 'Mutation', 'coat': 'Short/Long', 'pattern': 'All'}</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>breed</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.656" endtime="20240730 19:32:40.656"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>country</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.657" endtime="20240730 19:32:40.657"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>origin</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.657" endtime="20240730 19:32:40.657"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>coat</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.657" endtime="20240730 19:32:40.657"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>pattern</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.657" endtime="20240730 19:32:40.657"/>
+</kw>
+<status status="PASS" starttime="20240730 19:32:40.656" endtime="20240730 19:32:40.657"/>
+</iter>
+<iter>
+<var name="${ITEM}">{'breed': 'American Bobtail', 'country': 'United States', 'origin': 'Mutation', 'coat': 'Short/Long', 'pattern': 'All'}</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>breed</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.657" endtime="20240730 19:32:40.658"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>country</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.658" endtime="20240730 19:32:40.658"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>origin</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.658" endtime="20240730 19:32:40.658"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>coat</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.658" endtime="20240730 19:32:40.658"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>pattern</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.658" endtime="20240730 19:32:40.658"/>
+</kw>
+<status status="PASS" starttime="20240730 19:32:40.657" endtime="20240730 19:32:40.658"/>
+</iter>
+<iter>
+<var name="${ITEM}">{'breed': 'American Shorthair', 'country': 'United States', 'origin': 'Natural', 'coat': 'Short', 'pattern': 'All but colorpoint'}</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>breed</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.659" endtime="20240730 19:32:40.659"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>country</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.659" endtime="20240730 19:32:40.659"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>origin</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.659" endtime="20240730 19:32:40.659"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>coat</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.659" endtime="20240730 19:32:40.659"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>pattern</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.659" endtime="20240730 19:32:40.660"/>
+</kw>
+<status status="PASS" starttime="20240730 19:32:40.658" endtime="20240730 19:32:40.660"/>
+</iter>
+<iter>
+<var name="${ITEM}">{'breed': 'American Wirehair', 'country': 'United States', 'origin': 'Mutation', 'coat': 'Rex', 'pattern': 'All but colorpoint'}</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>breed</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.660" endtime="20240730 19:32:40.660"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>country</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.660" endtime="20240730 19:32:40.660"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>origin</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.660" endtime="20240730 19:32:40.660"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>coat</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.660" endtime="20240730 19:32:40.661"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>pattern</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.661" endtime="20240730 19:32:40.661"/>
+</kw>
+<status status="PASS" starttime="20240730 19:32:40.660" endtime="20240730 19:32:40.661"/>
+</iter>
+<iter>
+<var name="${ITEM}">{'breed': 'Arabian Mau', 'country': 'Arabian Peninsula', 'origin': 'Natural', 'coat': 'Short', 'pattern': ''}</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>breed</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.661" endtime="20240730 19:32:40.661"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>country</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.661" endtime="20240730 19:32:40.661"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>origin</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.661" endtime="20240730 19:32:40.662"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>coat</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.662" endtime="20240730 19:32:40.662"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>pattern</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.662" endtime="20240730 19:32:40.662"/>
+</kw>
+<status status="PASS" starttime="20240730 19:32:40.661" endtime="20240730 19:32:40.663"/>
+</iter>
+<iter>
+<var name="${ITEM}">{'breed': 'Australian Mist', 'country': 'Australia', 'origin': 'Crossbreed', 'coat': 'Short', 'pattern': 'Spotted and Classic tabby'}</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>breed</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.663" endtime="20240730 19:32:40.663"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>country</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.663" endtime="20240730 19:32:40.663"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>origin</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.663" endtime="20240730 19:32:40.663"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>coat</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.663" endtime="20240730 19:32:40.663"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>pattern</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.664" endtime="20240730 19:32:40.664"/>
+</kw>
+<status status="PASS" starttime="20240730 19:32:40.663" endtime="20240730 19:32:40.664"/>
+</iter>
+<iter>
+<var name="${ITEM}">{'breed': 'Asian', 'country': 'developed in the United Kingdom (founding stock from Asia)', 'origin': '', 'coat': 'Short', 'pattern': 'Evenly solid'}</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>breed</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.664" endtime="20240730 19:32:40.664"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>country</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.664" endtime="20240730 19:32:40.664"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>origin</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.664" endtime="20240730 19:32:40.664"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>coat</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.664" endtime="20240730 19:32:40.665"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>pattern</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.665" endtime="20240730 19:32:40.665"/>
+</kw>
+<status status="PASS" starttime="20240730 19:32:40.664" endtime="20240730 19:32:40.665"/>
+</iter>
+<iter>
+<var name="${ITEM}">{'breed': 'Asian Semi-longhair', 'country': 'United Kingdom', 'origin': 'Crossbreed', 'coat': 'Semi-long', 'pattern': 'Solid'}</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>breed</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.665" endtime="20240730 19:32:40.665"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>country</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.665" endtime="20240730 19:32:40.665"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>origin</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.665" endtime="20240730 19:32:40.666"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>coat</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.666" endtime="20240730 19:32:40.666"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>pattern</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.666" endtime="20240730 19:32:40.666"/>
+</kw>
+<status status="PASS" starttime="20240730 19:32:40.665" endtime="20240730 19:32:40.666"/>
+</iter>
+<iter>
+<var name="${ITEM}">{'breed': 'Balinese', 'country': 'developed in the United States (founding stock from Thailand)', 'origin': 'Crossbreed', 'coat': 'Long', 'pattern': 'Colorpoint'}</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>breed</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.666" endtime="20240730 19:32:40.666"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>country</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.666" endtime="20240730 19:32:40.667"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>origin</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.667" endtime="20240730 19:32:40.667"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>coat</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.667" endtime="20240730 19:32:40.667"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>pattern</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.667" endtime="20240730 19:32:40.667"/>
+</kw>
+<status status="PASS" starttime="20240730 19:32:40.666" endtime="20240730 19:32:40.667"/>
+</iter>
+<iter>
+<var name="${ITEM}">{'breed': 'Bambino', 'country': 'United States', 'origin': 'Crossbreed', 'coat': 'Hairless/Furry down', 'pattern': ''}</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>breed</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.667" endtime="20240730 19:32:40.667"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>country</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.668" endtime="20240730 19:32:40.668"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>origin</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.668" endtime="20240730 19:32:40.668"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>coat</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.668" endtime="20240730 19:32:40.668"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>pattern</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.668" endtime="20240730 19:32:40.668"/>
+</kw>
+<status status="PASS" starttime="20240730 19:32:40.667" endtime="20240730 19:32:40.668"/>
+</iter>
+<iter>
+<var name="${ITEM}">{'breed': 'Bengal', 'country': 'developed in the United States (founding stock from Asia)', 'origin': 'Hybrid', 'coat': 'Short', 'pattern': 'Spotted/Marbled'}</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>breed</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.668" endtime="20240730 19:32:40.669"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>country</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.669" endtime="20240730 19:32:40.669"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>origin</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.669" endtime="20240730 19:32:40.669"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>coat</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.669" endtime="20240730 19:32:40.669"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>pattern</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.669" endtime="20240730 19:32:40.670"/>
+</kw>
+<status status="PASS" starttime="20240730 19:32:40.668" endtime="20240730 19:32:40.670"/>
+</iter>
+<iter>
+<var name="${ITEM}">{'breed': 'Birman', 'country': 'developed in France (founding stock from Burma)', 'origin': 'Natural', 'coat': 'Semi Long', 'pattern': 'Colorpoint'}</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>breed</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.670" endtime="20240730 19:32:40.670"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>country</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.670" endtime="20240730 19:32:40.670"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>origin</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.670" endtime="20240730 19:32:40.670"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>coat</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.670" endtime="20240730 19:32:40.670"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>pattern</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.670" endtime="20240730 19:32:40.671"/>
+</kw>
+<status status="PASS" starttime="20240730 19:32:40.670" endtime="20240730 19:32:40.671"/>
+</iter>
+<iter>
+<var name="${ITEM}">{'breed': 'Bombay', 'country': 'developed in the United States (founding stock from Asia)', 'origin': 'Crossbred', 'coat': 'Short', 'pattern': 'Solid'}</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>breed</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.671" endtime="20240730 19:32:40.671"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>country</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.671" endtime="20240730 19:32:40.671"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>origin</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.671" endtime="20240730 19:32:40.671"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>coat</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.671" endtime="20240730 19:32:40.672"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>pattern</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.672" endtime="20240730 19:32:40.672"/>
+</kw>
+<status status="PASS" starttime="20240730 19:32:40.671" endtime="20240730 19:32:40.672"/>
+</iter>
+<iter>
+<var name="${ITEM}">{'breed': 'Brazilian Shorthair', 'country': 'Brazil', 'origin': 'Natural', 'coat': 'Short', 'pattern': 'All'}</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>breed</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.672" endtime="20240730 19:32:40.672"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>country</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.672" endtime="20240730 19:32:40.672"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>origin</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.672" endtime="20240730 19:32:40.673"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>coat</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.673" endtime="20240730 19:32:40.673"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>pattern</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.673" endtime="20240730 19:32:40.673"/>
+</kw>
+<status status="PASS" starttime="20240730 19:32:40.672" endtime="20240730 19:32:40.673"/>
+</iter>
+<iter>
+<var name="${ITEM}">{'breed': 'British Semi-longhair', 'country': 'United Kingdom', 'origin': '', 'coat': 'Medium', 'pattern': 'All'}</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>breed</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.673" endtime="20240730 19:32:40.673"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>country</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.673" endtime="20240730 19:32:40.673"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>origin</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.674" endtime="20240730 19:32:40.674"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>coat</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.674" endtime="20240730 19:32:40.674"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>pattern</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.674" endtime="20240730 19:32:40.674"/>
+</kw>
+<status status="PASS" starttime="20240730 19:32:40.673" endtime="20240730 19:32:40.674"/>
+</iter>
+<iter>
+<var name="${ITEM}">{'breed': 'British Shorthair', 'country': 'United Kingdom', 'origin': 'Natural', 'coat': 'Short', 'pattern': 'All'}</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>breed</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.674" endtime="20240730 19:32:40.674"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>country</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.674" endtime="20240730 19:32:40.675"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>origin</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.675" endtime="20240730 19:32:40.675"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>coat</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.675" endtime="20240730 19:32:40.675"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>pattern</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.675" endtime="20240730 19:32:40.675"/>
+</kw>
+<status status="PASS" starttime="20240730 19:32:40.674" endtime="20240730 19:32:40.675"/>
+</iter>
+<iter>
+<var name="${ITEM}">{'breed': 'British Longhair', 'country': 'United Kingdom', 'origin': '', 'coat': 'Long', 'pattern': ''}</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>breed</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.675" endtime="20240730 19:32:40.675"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>country</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.676" endtime="20240730 19:32:40.676"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>origin</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.676" endtime="20240730 19:32:40.676"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>coat</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.676" endtime="20240730 19:32:40.676"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>pattern</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.676" endtime="20240730 19:32:40.676"/>
+</kw>
+<status status="PASS" starttime="20240730 19:32:40.675" endtime="20240730 19:32:40.676"/>
+</iter>
+<iter>
+<var name="${ITEM}">{'breed': 'Burmese', 'country': 'Burma and Thailand', 'origin': 'Natural', 'coat': 'Short', 'pattern': 'Solid'}</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>breed</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.676" endtime="20240730 19:32:40.677"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>country</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.677" endtime="20240730 19:32:40.677"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>origin</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.677" endtime="20240730 19:32:40.677"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>coat</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.677" endtime="20240730 19:32:40.677"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>pattern</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.677" endtime="20240730 19:32:40.677"/>
+</kw>
+<status status="PASS" starttime="20240730 19:32:40.676" endtime="20240730 19:32:40.677"/>
+</iter>
+<iter>
+<var name="${ITEM}">{'breed': 'Burmilla', 'country': 'United Kingdom', 'origin': 'Crossbreed', 'coat': 'Short/Long', 'pattern': ''}</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>breed</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.677" endtime="20240730 19:32:40.678"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>country</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.678" endtime="20240730 19:32:40.678"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>origin</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.678" endtime="20240730 19:32:40.678"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>coat</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.678" endtime="20240730 19:32:40.679"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>pattern</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.679" endtime="20240730 19:32:40.679"/>
+</kw>
+<status status="PASS" starttime="20240730 19:32:40.677" endtime="20240730 19:32:40.679"/>
+</iter>
+<iter>
+<var name="${ITEM}">{'breed': 'California Spangled', 'country': 'United States', 'origin': 'Crossbreed', 'coat': 'Short', 'pattern': 'Spotted'}</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>breed</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.679" endtime="20240730 19:32:40.679"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>country</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.679" endtime="20240730 19:32:40.679"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>origin</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.680" endtime="20240730 19:32:40.680"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>coat</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.680" endtime="20240730 19:32:40.680"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>pattern</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.680" endtime="20240730 19:32:40.680"/>
+</kw>
+<status status="PASS" starttime="20240730 19:32:40.679" endtime="20240730 19:32:40.680"/>
+</iter>
+<iter>
+<var name="${ITEM}">{'breed': 'Chantilly-Tiffany', 'country': 'United States', 'origin': '', 'coat': '', 'pattern': ''}</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>breed</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.680" endtime="20240730 19:32:40.681"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>country</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.681" endtime="20240730 19:32:40.681"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>origin</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.681" endtime="20240730 19:32:40.681"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>coat</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.681" endtime="20240730 19:32:40.681"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>pattern</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.681" endtime="20240730 19:32:40.681"/>
+</kw>
+<status status="PASS" starttime="20240730 19:32:40.680" endtime="20240730 19:32:40.682"/>
+</iter>
+<iter>
+<var name="${ITEM}">{'breed': 'Chartreux', 'country': 'France', 'origin': 'Natural', 'coat': 'Short', 'pattern': 'Solid'}</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>breed</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.682" endtime="20240730 19:32:40.682"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>country</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.682" endtime="20240730 19:32:40.682"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>origin</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.682" endtime="20240730 19:32:40.682"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>coat</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.682" endtime="20240730 19:32:40.682"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>pattern</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.682" endtime="20240730 19:32:40.683"/>
+</kw>
+<status status="PASS" starttime="20240730 19:32:40.682" endtime="20240730 19:32:40.683"/>
+</iter>
+<iter>
+<var name="${ITEM}">{'breed': 'Chausie', 'country': 'France', 'origin': 'Hybrid', 'coat': 'Short', 'pattern': 'Ticked'}</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>breed</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.683" endtime="20240730 19:32:40.683"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>country</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.683" endtime="20240730 19:32:40.683"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>origin</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.683" endtime="20240730 19:32:40.683"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>coat</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.683" endtime="20240730 19:32:40.683"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${ITEM}</arg>
+<arg>pattern</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240730 19:32:40.684" endtime="20240730 19:32:40.684"/>
+</kw>
+<status status="PASS" starttime="20240730 19:32:40.683" endtime="20240730 19:32:40.684"/>
+</iter>
+<status status="PASS" starttime="20240730 19:32:40.654" endtime="20240730 19:32:40.684"/>
+</for>
+<status status="PASS" starttime="20240730 19:32:40.653" endtime="20240730 19:32:40.684"/>
+</kw>
+<status status="PASS" starttime="20240730 19:32:40.071" endtime="20240730 19:32:40.684"/>
+</test>
+<test id="s1-t2" name="CT02: Request with invalid limit parameter returns status code 400 and an error message" line="12">
+<kw name="Given I specify the limit parameter" library="get_breeds_resources">
+<arg>abc001</arg>
+<kw name="Evaluate" library="BuiltIn">
+<var>${URL}</var>
+<arg>'${URL}?limit=${LIMIT_PARAMETER}'</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240730 19:32:40.686" level="INFO">${URL} = https://catfact.ninja/breeds?limit=abc001</msg>
+<status status="PASS" starttime="20240730 19:32:40.686" endtime="20240730 19:32:40.687"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${URL}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20240730 19:32:40.687" level="INFO">${URL} = https://catfact.ninja/breeds?limit=abc001</msg>
+<status status="PASS" starttime="20240730 19:32:40.687" endtime="20240730 19:32:40.687"/>
+</kw>
+<status status="PASS" starttime="20240730 19:32:40.686" endtime="20240730 19:32:40.687"/>
+</kw>
+<kw name="When I send a GET request to /breeds" library="get_breeds_resources">
+<kw name="GET" library="RequestsLibrary">
+<var>${RESPONSE}</var>
+<arg>${URL}</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20240730 19:32:41.173" level="INFO">GET Request : url=https://catfact.ninja/breeds?limit=abc001 
+ path_url=/breeds?limit=abc001 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20240730 19:32:41.173" level="INFO">GET Response : url=https://catfact.ninja/breeds?limit=abc001 
+ status=200, reason=OK 
+ headers={'Server': 'nginx', 'Date': 'Tue, 30 Jul 2024 22:32:18 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Vary': 'Accept-Encoding', 'Cache-Control': 'no-cache, private', 'X-Ratelimit-Limit': '100', 'X-Ratelimit-Remaining': '98', 'Access-Control-Allow-Origin': '*', 'Set-Cookie': 'XSRF-TOKEN=eyJpdiI6IlovK1FUMmxqS0l1cEtGZVJtS3pQbWc9PSIsInZhbHVlIjoiaktaZmVCZlhjVDlNTEVFTXFvZ1dZaTUvR3ovVUFDZ0dUMnlQbzVSeERVV1pqL2tOazMzTHJkQzBTTThGWDVQK3oxczB5NDBYblNwUC9rOWlWZmZ2WlJqcEhDYXhjVDgxYVFJZkdlRlJXNlJPa1BGaUljN1lDeVZtNnVsSmU2TWIiLCJtYWMiOiI3OGVmYjJiZDNlZDhhMGFjZTQ5NzBhZmQyZjU1NGRiNzU4NWNjYjJhZDQxYWViM2NlMjYxZDk1YTIyOTU2MTM5IiwidGFnIjoiIn0%3D; expires=Wed, 31-Jul-2024 00:32:18 GMT; Max-Age=7200; path=/; secure; samesite=lax, catfacts_session=eyJpdiI6Imo3aE9HZWxZRE1WWmp3UEd3NE5SMGc9PSIsInZhbHVlIjoiR1N6ZFdZTURoc25zR2QvdjVnS1d1UDZTYUtTaENOT2hoMkQ5dGVRdDRHeEFEQlAyazd4VGtXdmE4WmxoYThjdmtSczFhRFZqeEhrcnpibUxReUw2QWxoczJvY0RMSm8ycys0bnpieklDdzJtVzFWa2xtQVdHVHhvZ3ZaSGwxanAiLCJtYWMiOiJiNWQ1MWZhYTk3ZWRiOTExNTJhYzFhODYzM2UzOGZiMWUyZDY3NjFiZWUzNjQ1ZDYwZDBkMDY2YjI3YmJhZjFhIiwidGFnIjoiIn0%3D; expires=Wed, 31-Jul-2024 00:32:18 GMT; Max-Age=7200; path=/; httponly; samesite=lax', 'X-Frame-Options': 'SAMEORIGIN', 'X-XSS-Protection': '1; mode=block', 'X-Content-Type-Options': 'nosniff', 'Content-Encoding': 'gzip'} 
+ body={"current_page":1,"data":[{"breed":"Abyssinian","country":"Ethiopia","origin":"Natural\/Standard","coat":"Short","pattern":"Ticked"},{"breed":"Aegean","country":"Greece","origin":"Natural\/Standard","coat":"Semi-long","pattern":"Bi- or tri-colored"},{"breed":"American Curl","country":"United States","origin":"Mutation","coat":"Short\/Long","pattern":"All"},{"breed":"American Bobtail","country":"United States","origin":"Mutation","coat":"Short\/Long","pattern":"All"},{"breed":"American Shorthair","country":"United States","origin":"Natural","coat":"Short","pattern":"All but colorpoint"},{"breed":"American Wirehair","country":"United States","origin":"Mutation","coat":"Rex","pattern":"All but colorpoint"},{"breed":"Arabian Mau","country":"Arabian Peninsula","origin":"Natural","coat":"Short","pattern":""},{"breed":"Australian Mist","country":"Australia","origin":"Crossbreed","coat":"Short","pattern":"Spotted and Classic tabby"},{"breed":"Asian","country":"developed in the United Kingdom (founding stock from Asia)","origin":"","coat":"Short","pattern":"Evenly solid"},{"breed":"Asian Semi-longhair","country":"United Kingdom","origin":"Crossbreed","coat":"Semi-long","pattern":"Solid"},{"breed":"Balinese","country":"developed in the United States (founding stock from Thailand)","origin":"Crossbreed","coat":"Long","pattern":"Colorpoint"},{"breed":"Bambino","country":"United States","origin":"Crossbreed","coat":"Hairless\/Furry down","pattern":""},{"breed":"Bengal","country":"developed in the United States (founding stock from Asia)","origin":"Hybrid","coat":"Short","pattern":"Spotted\/Marbled"},{"breed":"Birman","country":"developed in France (founding stock from Burma)","origin":"Natural","coat":"Semi Long","pattern":"Colorpoint"},{"breed":"Bombay","country":"developed in the United States (founding stock from Asia)","origin":"Crossbred","coat":"Short","pattern":"Solid"},{"breed":"Brazilian Shorthair","country":"Brazil","origin":"Natural","coat":"Short","pattern":"All"},{"breed":"British Semi-longhair","country":"United Kingdom","origin":"","coat":"Medium","pattern":"All"},{"breed":"British Shorthair","country":"United Kingdom","origin":"Natural","coat":"Short","pattern":"All"},{"breed":"British Longhair","country":"United Kingdom","origin":"","coat":"Long","pattern":""},{"breed":"Burmese","country":"Burma and Thailand","origin":"Natural","coat":"Short","pattern":"Solid"},{"breed":"Burmilla","country":"United Kingdom","origin":"Crossbreed","coat":"Short\/Long","pattern":""},{"breed":"California Spangled","country":"United States","origin":"Crossbreed","coat":"Short","pattern":"Spotted"},{"breed":"Chantilly-Tiffany","country":"United States","origin":"","coat":"","pattern":""},{"breed":"Chartreux","country":"France","origin":"Natural","coat":"Short","pattern":"Solid"},{"breed":"Chausie","country":"France","origin":"Hybrid","coat":"Short","pattern":"Ticked"}],"first_page_url":"https:\/\/catfact.ninja\/breeds?page=1","from":1,"last_page":4,"last_page_url":"https:\/\/catfact.ninja\/breeds?page=4","links":[{"url":null,"label":"Previous","active":false},{"url":"https:\/\/catfact.ninja\/breeds?page=1","label":"1","active":true},{"url":"https:\/\/catfact.ninja\/breeds?page=2","label":"2","active":false},{"url":"https:\/\/catfact.ninja\/breeds?page=3","label":"3","active":false},{"url":"https:\/\/catfact.ninja\/breeds?page=4","label":"4","active":false},{"url":"https:\/\/catfact.ninja\/breeds?page=2","label":"Next","active":false}],"next_page_url":"https:\/\/catfact.ninja\/breeds?page=2","path":"https:\/\/catfact.ninja\/breeds","per_page":25,"prev_page_url":null,"to":25,"total":98} 
+ </msg>
+<msg timestamp="20240730 19:32:41.173" level="INFO">${RESPONSE} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20240730 19:32:40.687" endtime="20240730 19:32:41.173"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${RESPONSE}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20240730 19:32:41.174" level="INFO">${RESPONSE} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20240730 19:32:41.173" endtime="20240730 19:32:41.174"/>
+</kw>
+<status status="PASS" starttime="20240730 19:32:40.687" endtime="20240730 19:32:41.174"/>
+</kw>
+<kw name="Then I should receive a response with status code" library="get_breeds_resources">
+<arg>400</arg>
+<arg>Bad Request</arg>
+<kw name="Status Should Be" library="RequestsLibrary">
+<arg>${status_code}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<msg timestamp="20240730 19:32:41.175" level="FAIL">Url: https://catfact.ninja/breeds?limit=abc001 Expected status: 200 != 400</msg>
+<status status="FAIL" starttime="20240730 19:32:41.175" endtime="20240730 19:32:41.178"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${status_reason}</arg>
+<arg>${RESPONSE.reason}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" starttime="20240730 19:32:41.178" endtime="20240730 19:32:41.178"/>
+</kw>
+<status status="FAIL" starttime="20240730 19:32:41.175" endtime="20240730 19:32:41.178"/>
+</kw>
+<kw name="And the response should include the error" library="get_breeds_resources">
+<arg>Invalid parameter</arg>
+<status status="NOT RUN" starttime="20240730 19:32:41.179" endtime="20240730 19:32:41.179"/>
+</kw>
+<kw name="And the response should include the message" library="get_breeds_resources">
+<arg>Parameter 'abc001' is not valid, it should be an integer</arg>
+<status status="NOT RUN" starttime="20240730 19:32:41.179" endtime="20240730 19:32:41.179"/>
+</kw>
+<status status="FAIL" starttime="20240730 19:32:40.685" endtime="20240730 19:32:41.180">Url: https://catfact.ninja/breeds?limit=abc001 Expected status: 200 != 400</status>
+</test>
+<test id="s1-t3" name="CT03: Validate that specifying the limit parameter 1 returns only the first object in the list" line="19">
+<kw name="Given I specify the limit parameter" library="get_breeds_resources">
+<arg>1</arg>
+<kw name="Evaluate" library="BuiltIn">
+<var>${URL}</var>
+<arg>'${URL}?limit=${LIMIT_PARAMETER}'</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240730 19:32:41.181" level="INFO">${URL} = https://catfact.ninja/breeds?limit=1</msg>
+<status status="PASS" starttime="20240730 19:32:41.181" endtime="20240730 19:32:41.181"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${URL}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20240730 19:32:41.182" level="INFO">${URL} = https://catfact.ninja/breeds?limit=1</msg>
+<status status="PASS" starttime="20240730 19:32:41.181" endtime="20240730 19:32:41.182"/>
+</kw>
+<status status="PASS" starttime="20240730 19:32:41.181" endtime="20240730 19:32:41.182"/>
+</kw>
+<kw name="When I send a GET request to /breeds" library="get_breeds_resources">
+<kw name="GET" library="RequestsLibrary">
+<var>${RESPONSE}</var>
+<arg>${URL}</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20240730 19:32:41.709" level="INFO">GET Request : url=https://catfact.ninja/breeds?limit=1 
+ path_url=/breeds?limit=1 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20240730 19:32:41.709" level="INFO">GET Response : url=https://catfact.ninja/breeds?limit=1 
+ status=200, reason=OK 
+ headers={'Server': 'nginx', 'Date': 'Tue, 30 Jul 2024 22:32:19 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Vary': 'Accept-Encoding', 'Cache-Control': 'no-cache, private', 'X-Ratelimit-Limit': '100', 'X-Ratelimit-Remaining': '97', 'Access-Control-Allow-Origin': '*', 'Set-Cookie': 'XSRF-TOKEN=eyJpdiI6IkZYUTM2ejR3VnNnc25sNWVkRWEvQ3c9PSIsInZhbHVlIjoiVGpESit5SnIvMUZHUnVmbG0vMHlKZ1IrdE94RkRmR0FxdEdRQ1BkMjlBOERCWCtFZFVzN2diZEJVVVFSVFhibXQzd3pjeDVWT0VMYStIb2hxVGJPR2FuejZwQTI2YzVVVHJGdjBOdi9HK2l3eC9VVm13MXE0ZUxpYk1wdnAyekoiLCJtYWMiOiJjYWE5YTBiYzRhYjg3MWU5ODRhOGQ2ZjNhYTU1NGFkNDJhNTdiMWFkOGMwYmRhNGZjYTI5MmJjYWJmNWJlMmVlIiwidGFnIjoiIn0%3D; expires=Wed, 31-Jul-2024 00:32:19 GMT; Max-Age=7200; path=/; secure; samesite=lax, catfacts_session=eyJpdiI6IjlYdlRVdnNaM1pTdUs2YXA4TXV6dnc9PSIsInZhbHVlIjoicmwvOEp2WlZhcS9LMWdzNmhVaEkxTkVIYXlLSUl3d0pqY2dMVFByNUhmQ25FMHRqQ2hNdWdEc2FtRWo2RVJDSXJCa1lOQ2pSSlVYTkx6OVJVSUtiZzV6c1RySlFDZE12ZGxZb2M4Y2c0NVFERXZ0OXFFazROY0FnNTVRcjhmWFkiLCJtYWMiOiIyNTc5NTcwODY5Nzc2MDE0YWFjYzkzYzY5MTcxNzk1Yjc0NTc4MGFhYjA5YzkzZTZjMjAwYWIxYTE1NGIzYjUyIiwidGFnIjoiIn0%3D; expires=Wed, 31-Jul-2024 00:32:19 GMT; Max-Age=7200; path=/; httponly; samesite=lax', 'X-Frame-Options': 'SAMEORIGIN', 'X-XSS-Protection': '1; mode=block', 'X-Content-Type-Options': 'nosniff', 'Content-Encoding': 'gzip'} 
+ body={"current_page":1,"data":[{"breed":"Abyssinian","country":"Ethiopia","origin":"Natural\/Standard","coat":"Short","pattern":"Ticked"}],"first_page_url":"https:\/\/catfact.ninja\/breeds?page=1","from":1,"last_page":98,"last_page_url":"https:\/\/catfact.ninja\/breeds?page=98","links":[{"url":null,"label":"Previous","active":false},{"url":"https:\/\/catfact.ninja\/breeds?page=1","label":"1","active":true},{"url":"https:\/\/catfact.ninja\/breeds?page=2","label":"2","active":false},{"url":"https:\/\/catfact.ninja\/breeds?page=3","label":"3","active":false},{"url":"https:\/\/catfact.ninja\/breeds?page=4","label":"4","active":false},{"url":"https:\/\/catfact.ninja\/breeds?page=5","label":"5","active":false},{"url":"https:\/\/catfact.ninja\/breeds?page=6","label":"6","active":false},{"url":"https:\/\/catfact.ninja\/breeds?page=7","label":"7","active":false},{"url":"https:\/\/catfact.ninja\/breeds?page=8","label":"8","active":false},{"url":"https:\/\/catfact.ninja\/breeds?page=9","label":"9","active":false},{"url":"https:\/\/catfact.ninja\/breeds?page=10","label":"10","active":false},{"url":null,"label":"...","active":false},{"url":"https:\/\/catfact.ninja\/breeds?page=97","label":"97","active":false},{"url":"https:\/\/catfact.ninja\/breeds?page=98","label":"98","active":false},{"url":"https:\/\/catfact.ninja\/breeds?page=2","label":"Next","active":false}],"next_page_url":"https:\/\/catfact.ninja\/breeds?page=2","path":"https:\/\/catfact.ninja\/breeds","per_page":1,"prev_page_url":null,"to":1,"total":98} 
+ </msg>
+<msg timestamp="20240730 19:32:41.709" level="INFO">${RESPONSE} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20240730 19:32:41.182" endtime="20240730 19:32:41.709"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${RESPONSE}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20240730 19:32:41.709" level="INFO">${RESPONSE} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20240730 19:32:41.709" endtime="20240730 19:32:41.709"/>
+</kw>
+<status status="PASS" starttime="20240730 19:32:41.182" endtime="20240730 19:32:41.709"/>
+</kw>
+<kw name="Then I should receive a response with status code" library="get_breeds_resources">
+<arg>200</arg>
+<arg>OK</arg>
+<kw name="Status Should Be" library="RequestsLibrary">
+<arg>${status_code}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" starttime="20240730 19:32:41.710" endtime="20240730 19:32:41.710"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${status_reason}</arg>
+<arg>${RESPONSE.reason}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20240730 19:32:41.710" endtime="20240730 19:32:41.711"/>
+</kw>
+<status status="PASS" starttime="20240730 19:32:41.710" endtime="20240730 19:32:41.711"/>
+</kw>
+<kw name="And the response body should contain a &quot;data&quot; field" library="get_breeds_resources">
+<kw name="Get From Dictionary" library="Collections">
+<var>${DATA}</var>
+<arg>${response.json()}</arg>
+<arg>data</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20240730 19:32:41.712" level="INFO">${DATA} = [{'breed': 'Abyssinian', 'country': 'Ethiopia', 'origin': 'Natural/Standard', 'coat': 'Short', 'pattern': 'Ticked'}]</msg>
+<status status="PASS" starttime="20240730 19:32:41.712" endtime="20240730 19:32:41.712"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${DATA}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<msg timestamp="20240730 19:32:41.712" level="INFO">Length is 1</msg>
+<status status="PASS" starttime="20240730 19:32:41.712" endtime="20240730 19:32:41.712"/>
+</kw>
+<status status="PASS" starttime="20240730 19:32:41.711" endtime="20240730 19:32:41.712"/>
+</kw>
+<kw name="And the &quot;data&quot; field should contain exactly one object" library="get_breeds_resources">
+<kw name="Get From Dictionary" library="Collections">
+<var>${DATA}</var>
+<arg>${RESPONSE.json()}</arg>
+<arg>data</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20240730 19:32:41.714" level="INFO">${DATA} = [{'breed': 'Abyssinian', 'country': 'Ethiopia', 'origin': 'Natural/Standard', 'coat': 'Short', 'pattern': 'Ticked'}]</msg>
+<status status="PASS" starttime="20240730 19:32:41.713" endtime="20240730 19:32:41.714"/>
+</kw>
+<for flavor="IN">
+<var>${ITEM}</var>
+<value>@{DATA}</value>
+<iter>
+<var name="${ITEM}">{'breed': 'Abyssinian', 'country': 'Ethiopia', 'origin': 'Natural/Standard', 'coat': 'Short', 'pattern': 'Ticked'}</var>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${ITEM['breed']}</arg>
+<arg>Abyssinian</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20240730 19:32:41.714" endtime="20240730 19:32:41.714"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${ITEM['country']}</arg>
+<arg>Ethiopia</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20240730 19:32:41.714" endtime="20240730 19:32:41.715"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${ITEM['origin']}</arg>
+<arg>Natural/Standard</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20240730 19:32:41.715" endtime="20240730 19:32:41.715"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${ITEM['coat']}</arg>
+<arg>Short</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20240730 19:32:41.715" endtime="20240730 19:32:41.716"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${ITEM['pattern']}</arg>
+<arg>Ticked</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20240730 19:32:41.716" endtime="20240730 19:32:41.716"/>
+</kw>
+<status status="PASS" starttime="20240730 19:32:41.714" endtime="20240730 19:32:41.716"/>
+</iter>
+<status status="PASS" starttime="20240730 19:32:41.714" endtime="20240730 19:32:41.716"/>
+</for>
+<status status="PASS" starttime="20240730 19:32:41.713" endtime="20240730 19:32:41.716"/>
+</kw>
+<status status="PASS" starttime="20240730 19:32:41.180" endtime="20240730 19:32:41.717"/>
+</test>
+<doc>Validate the GET method on the /breeds endpoint</doc>
+<status status="FAIL" starttime="20240730 19:32:39.806" endtime="20240730 19:32:41.718"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="1" skip="0" id="s1" name="Get Breeds">Get Breeds</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
