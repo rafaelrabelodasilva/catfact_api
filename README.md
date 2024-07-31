@@ -35,7 +35,7 @@ This project is designed to perform GET method tests on the endpoint `https://ca
 
 ## 🚀 How to run
 
-1. Clone the this repository.
+1. Clone this repository.
 
 2. Install [Python 3.7.4](https://www.python.org/downloads/release/python-374/).
 
