@@ -22,8 +22,18 @@ This project is designed to perform GET method tests on the endpoint `https://ca
 - **CT02**: Request with invalid limit parameter returns status code 400 and an error message.
 - **CT03**: Validate that specifying the limit parameter `1` returns only the first object in the list.
 
+### 📚 Libs
 
-## 🚀 How to Run
+- RequestsLibrary:
+    - What it does: Imports the RequestsLibrary, enabling HTTP requests (such as GET, POST, etc.) and handling responses within Robot Framework tests.
+    - Why it's important: Without this library, it wasn't be able to make HTTP requests to test APIs.
+
+- Collections:
+    - What it does: Imports the Collections library, providing useful functions for manipulating lists and dictionaries within Robot Framework.
+    - Why it's important: It helps manipulate and verify structured data like lists and dictionaries, which are commonly used when testing APIs.
+
+
+## 🚀 How to run
 
 1. Clone the this repository.
 
@@ -42,12 +52,12 @@ This library is used in the tests. You can install it via pip by running the fol
 
 5. Navigate to the project directory and then to the /tests folder. Run the tests using the following command in your terminal:
 
-    `$ robot --outputdir test_results get_breeds.robot`
+    `robot --outputdir test_results get_breeds.robot`
 
     *Tip*: The `--outputdir test_results` option will place the generated files by Robot Framework into the tests/test_results directory.
 
 
-## 📄 Test Results
+## 📄 Test results
 
 After running the tests, you will find the following files in the test_results directory:
 
